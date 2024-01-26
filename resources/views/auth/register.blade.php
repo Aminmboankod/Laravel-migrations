@@ -9,6 +9,18 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+
+        <!-- Language -->
+        <div class="mt-4">
+            <x-input-label for="language" :value="__('Language')" />
+            <select id="language" class="block mt-1 w-full" name="language" :value="old('language')" required>
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+            </select>
+            <x-input-error :messages="$errors->get('language')" class="mt-2" />
+        </div>
+
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />

@@ -14,4 +14,14 @@ class Authenticate extends Middleware
     {
         return $request->expectsJson() ? null : route('login');
     }
+
+    /**
+     * Set the locale for the app.
+     */
+    public function setLocaleApp(Request $request): void
+    {
+        if (auth()->check()) {
+            app()->setLocale(auth()->user()->language);
+        }
+    }
 }
